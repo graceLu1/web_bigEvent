@@ -54,7 +54,7 @@ $(function() {
                 // 储存token信息 用于权限访问
                 localStorage.setItem('token', res.token)
                     // 跳转页面
-                location.href = '/index.html'
+                location.href = './index.html'
             }
         })
     })
