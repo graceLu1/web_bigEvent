@@ -14,7 +14,7 @@ $.ajaxPrefilter(function(options) {
 
     //全局统一挂载complete函数
     options.complete = function(res) {
-        if (res.responseJSON.status == 1 && res.responseJSON.message == '身份认证失败！') {
+        if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
             //1.强制清空存储数据
             localStorage.removeItem('token')
                 //2.强制跳转到登录页面

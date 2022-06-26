@@ -28,9 +28,11 @@ function getinfo() {
             if (res.status !== 0) {
                 return layui.layer.msg('获取信息失败')
             }
+            // console.log(res.data)
+
             //调用rebdenrAvatar渲染头像
             renderAvatar(res.data)
-        },
+        }
 
         //无论成功还是失败最后都会调用complete函数
         // complete: function(res) {
@@ -53,7 +55,7 @@ function renderAvatar(user) {
         //3.渲染图片头像或文本头像
     if (user.user_pic !== null) {
         //3.1图片头像
-        $('.layui-nav-img').attr('src', user_pic).show()
+        $('.layui-nav-img').attr('src', user.user_pic).show()
         $('.avatar').hide()
     } else {
         //3.2文本头像
@@ -62,3 +64,7 @@ function renderAvatar(user) {
         $('.avatar').html(first).show()
     }
 }
+
+// function excute() {
+//     console.log(getinfo());
+// }
